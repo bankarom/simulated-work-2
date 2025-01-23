@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #ffecd2, #ff9a9e);
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #3b3a3a;
+    margin: 10px 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-box-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background-color: #ff6f61;
+    color: white;
+    border: 2px solid #e65c50;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 120px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-box.score {
+    background-color: #6ab04c;
+    border-color: #519839;
+}
+
+.info-box.moves {
+    background-color: #3498db;
+    border-color: #2a7fbb;
+}
+
+.info-box.matches {
+    background-color: #f39c12;
+    border-color: #d4880a;
+}
+
+.game-container {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.golden-box {
+    width: 100px;
+    height: 100px;
+    background-color: #b8860b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.golden-box img {
+    width: 80%;
+    height: 80%;
+    display: none;
+    border-radius: 8px;
+}
+
+.golden-box img.show {
+    display: block;
+}
