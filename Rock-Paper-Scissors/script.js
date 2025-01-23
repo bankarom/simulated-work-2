@@ -9,12 +9,15 @@ class RockPaperScissors {
     }
 
     initializeGame() {
-      
         document.querySelectorAll('.choice-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const choice = button.dataset.choice;
                 this.play(choice);
             });
+        });
+
+        document.getElementById('restartButton').addEventListener('click', () => {
+            this.restartGame();
         });
     }
 
@@ -54,10 +57,8 @@ class RockPaperScissors {
         const computerChoice = this.getComputerChoice();
         const result = this.determineWinner(playerChoice, computerChoice);
         
-        
         document.getElementById('choices').textContent = 
             `You chose ${playerChoice} • Computer chose ${computerChoice}`;
-        
         
         const roundResult = document.getElementById('roundResult');
         roundResult.style.opacity = '0';
@@ -86,6 +87,17 @@ class RockPaperScissors {
         }, 200);
         
         this.updateScore(result);
+    }
+
+    restartGame() {
+        this.scores.player = 0;
+        this.scores.computer = 0;
+
+        document.getElementById('playerScore').textContent = this.scores.player;
+        document.getElementById('computerScore').textContent = this.scores.computer;
+
+        document.getElementById('roundResult').textContent = '';
+        document.getElementById('choices').textContent = '';
     }
 }
 
