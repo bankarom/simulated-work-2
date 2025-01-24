@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #f0f4f8, #ffecd2, #ff9a9e);
-    color: #333;
+    background: linear-gradient(135deg, #2b5876, #4e4376, #ff6f61);
+    color: #fff;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -15,70 +15,56 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 10px;
+    position: relative;
 }
 
 h1 {
-    font-size: 36px;
-    color: #3b3a3a;
+    font-size: 42px;
+    color: #f9f7f7;
     margin: 10px 0;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .main-container {
-    width: 100%;
-    max-width: 900px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .info-box-container {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .info-box {
-    background-color: #ff6f61;
-    color: white;
-    border: 2px solid #e65c50;
-    border-radius: 8px;
+    background-color: #6a097d;
+    color: #fff;
+    border: 2px solid #4a064b;
+    border-radius: 10px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 120px;
-    height: 70px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.info-box.score {
-    background-color: #6ab04c;
-    border-color: #519839;
-}
-
-.info-box.moves {
-    background-color: #3498db;
-    border-color: #2a7fbb;
-}
-
-.info-box.matches {
-    background-color: #f39c12;
-    border-color: #d4880a;
-}
-
 .game-container {
-    background-color: white;
-    border: 2px solid #ddd;
-    border-radius: 8px;
+    background-color: green;
+    border: 2px solid #393e46;
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 600px;
@@ -90,19 +76,24 @@ h1 {
     grid-gap: 15px;
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .golden-box {
     width: 100px;
     height: 100px;
-    background-color: #b8860b;
+    background-color: #f4a261;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.golden-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .golden-box img {
@@ -114,4 +105,31 @@ h1 {
 
 .golden-box img.show {
     display: block;
+}
+
+.restart-btn {
+    background-color: #6a097d;
+    color: #fff;
+    border: 2px solid #4a064b;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.restart-btn:hover {
+    background-color: #5c086c;
+    transform: scale(1.05);
 }

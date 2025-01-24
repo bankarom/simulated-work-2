@@ -18,18 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'white', img: 'img/white.png' }
     ];
 
-    cardArray.sort(() => 0.5 - Math.random());
+    let grid = document.querySelector('#grid');
+    let resultDisplay = document.querySelector('#result');
+    let movesDisplay = document.querySelector('#moves');
+    let matchCountDisplay = document.querySelector('#match-count');
+    let restartBtn = document.querySelector('#restart-btn');
 
-    const grid = document.querySelector('#grid');
-    const resultDisplay = document.querySelector('#result');
-    const movesDisplay = document.querySelector('#moves');
-    const matchCountDisplay = document.querySelector('#match-count');
     let cardsChosen = [];
     let cardsChosenId = [];
     let cardsWon = [];
     let moves = 0;
 
     function createBoard() {
+        grid.innerHTML = '';
+        cardArray.sort(() => 0.5 - Math.random());
         cardArray.forEach((_, index) => {
             const card = document.createElement('div');
             card.classList.add('golden-box');
@@ -42,6 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('click', flipCard);
             grid.appendChild(card);
         });
+
+        resetGameStats();
+    }
+
+    function resetGameStats() {
+        cardsChosen = [];
+        cardsChosenId = [];
+        cardsWon = [];
+        moves = 0;
+        resultDisplay.textContent = 'Score: 0';
+        movesDisplay.textContent = 'Moves: 0';
+        matchCountDisplay.textContent = 'Matches: 0/8';
     }
 
     function flipCard() {
@@ -89,5 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    restartBtn.addEventListener('click', createBoard);
+
     createBoard();
 });
+     
